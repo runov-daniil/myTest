@@ -5,7 +5,7 @@ public class mainFrame extends javax.swing.JFrame {
     public mainFrame() {
         initComponents();
     }
-
+        public static mainFrame mainFrame = new mainFrame();
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -17,9 +17,19 @@ public class mainFrame extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jButton1.setText("Учитель");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jButton2.setText("Ученик");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -46,9 +56,20 @@ public class mainFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    public static void main() {
-       mainFrame mainFrame = new mainFrame();
-       mainFrame.setVisible(true);
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        frames.teacherFrame.main();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        frames.studentFrame.main();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    public static void main(boolean hide) {
+        if(hide == true){
+            mainFrame.setVisible(true);
+        }else{
+            mainFrame.setVisible(false);
+        }
     }
     
 
