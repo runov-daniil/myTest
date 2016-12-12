@@ -5,12 +5,19 @@ public class teacherFrame extends javax.swing.JFrame {
     public teacherFrame() {
         initComponents();
     }
+    
+    private static teacherFrame teacherFrame = new teacherFrame();
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -27,9 +34,16 @@ public class teacherFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    public static void main() {
-        teacherFrame teacherFrame = new teacherFrame();
-        teacherFrame.setVisible(true);
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        frames.mainFrame.main(true);
+    }//GEN-LAST:event_formWindowClosing
+
+    public static void main(boolean hide) {
+        if(hide == true){
+            teacherFrame.setVisible(true);
+        }else{
+            teacherFrame.setVisible(false);
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

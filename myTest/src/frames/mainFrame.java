@@ -5,7 +5,7 @@ public class mainFrame extends javax.swing.JFrame {
     public mainFrame() {
         initComponents();
     }
-        public static mainFrame mainFrame = new mainFrame();
+        private static mainFrame mainFrame = new mainFrame();
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -57,11 +57,13 @@ public class mainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        frames.teacherFrame.main();
+        frames.teacherFrame.main(true);
+        main(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        frames.studentFrame.main();
+        frames.studentFrame.main(true);
+        main(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     public static void main(boolean hide) {
